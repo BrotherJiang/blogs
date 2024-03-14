@@ -1,0 +1,15 @@
+# 参考资料
+
+这里提供了我学习时参考的书籍、文献以及视频资料。
+
+## 文献
+
+- Title of Video. (Year of Publication). Publisher/Channel. Available at: URL. [Accessed date].
+
+## 图书
+
+- Rowling, J.K. (1997). *Harry Potter and the Philosopher's Stone*. Bloomsbury Publishing.
+
+## 视频教程
+
+- 因果推断入门[https://www.bradyneal.com/causal-inference-course]（Youtube/Bilibili都有视频）

@@ -1,0 +1,53 @@
+project:
+  type: website
+
+website:
+  title: "Huiyu的DS学习博客"
+  bread-crumbs: true
+  back-to-top-navigation: true
+  page-footer: "© Huiyu Jiang 2024"
+  reader-mode: true
+  repo-url: https://github.com/BrotherJiang/blogs
+  repo-actions: [edit, issue]
+
+  navbar:
+    background: primary
+    foreground: light
+    pinned: true
+    search: true
+    left:
+      - text: "博客"
+        file: index.qmd
+      - text: "个人简介"
+        file: about.qmd
+    # right:
+    #   - icon: github
+    #     menu:
+    #     - text: Source Code
+    #       url: https://code.com
+    #     - text: Report a Bug
+    #       url: https://bugs.com
+    #   - icon: twitter
+    #     href: https://twitter.com
+    #   - icon: google
+    #     href: http://google.com/
+
+  sidebar:
+    - title: "博客"
+      style: docked
+      type: dark
+      background: light
+      contents:
+        - index.qmd
+
+    - title: "资料"
+      contents:
+        - references.qmd
+        # navigation items
+
+format:
+  html:
+    theme:
+      light: cosmo
+      dark: darkly
+    css: styles.css

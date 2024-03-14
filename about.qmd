@@ -1,0 +1,16 @@
+---
+title: "About"
+image: profile.jpg
+about:
+  template: jolla
+  links:
+    - icon: linkedin
+      text: LinkedIn
+      href: https://linkedin.com/in/huiyu-jiang/
+    - icon: github
+      text: Github
+      href: https://github.com/BrotherJiang
+
+---
+
+作为一名即将入职DS的统计博士，对于因果推断和AB实验也经验有限，将在这里记录并分享自己的所学所思，希望在AI爆发的时代努力提高自己。

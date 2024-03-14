@@ -1,0 +1,4 @@
+- source: project
+  quarto-pub:
+    - id: 3eec9192-f614-4b16-9360-ceb7fcc8b388
+      url: 'https://huiyu.quarto.pub/blogs'
