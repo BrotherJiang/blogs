@@ -2,7 +2,7 @@ project:
   type: website
 
 website:
-  title: "Huiyu的DS学习博客"
+  title: "Huiyu的DS学习记录"
   bread-crumbs: true
   back-to-top-navigation: true
   page-footer: "© Huiyu Jiang 2024"
@@ -20,6 +20,8 @@ website:
         file: index.qmd
       - text: "个人简介"
         file: about.qmd
+      - text: "参考资料"
+        file: reference.qmd
     # right:
     #   - icon: github
     #     menu:
@@ -32,18 +34,17 @@ website:
     #   - icon: google
     #     href: http://google.com/
 
-  sidebar:
-    - title: "博客"
-      style: docked
-      type: dark
-      background: light
-      contents:
-        - index.qmd
-
-    - title: "资料"
-      contents:
-        - references.qmd
-        # navigation items
+  # sidebar:
+  #   - title: "博客"
+  #     style: docked
+  #     type: dark
+  #     background: light
+  #     contents:
+  #       - index.qmd
+  #   - title: "资料"
+  #     contents:
+  #       - references.qmd
+  #       # navigation items
 
 format:
   html:
