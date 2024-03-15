@@ -1,14 +1,22 @@
 ---
 title: "blogs"
-listing:
-  contents: posts
-  sort: "date desc"
-  type: default
-  categories: true
-  sort-ui: false
-  filter-ui: false
+listing: 
+  - id: causal-inference
+    contents: "posts/Causal-Inference/*.qmd"
+    type: table
+  - id: ai-news
+    contents: "posts/AI-news/*.qmd"
+    type: table
 page-layout: full
 title-block-banner: true
 ---
 
+## Causal Inference
 
+:::{#causal-inference}
+:::
+
+## Lab Reports
+
+:::{#ai-news}
+:::

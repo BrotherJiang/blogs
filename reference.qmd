@@ -12,4 +12,4 @@
 
 ## 视频教程
 
-- 因果推断入门[https://www.bradyneal.com/causal-inference-course]（Youtube/Bilibili都有视频）
+- 

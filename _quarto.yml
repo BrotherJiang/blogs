@@ -2,7 +2,7 @@ project:
   type: website
 
 website:
-  title: "Huiyu的DS学习记录"
+  title: "Huiyu的DS学习博客"
   bread-crumbs: true
   back-to-top-navigation: true
   page-footer: "© Huiyu Jiang 2024"
@@ -20,8 +20,6 @@ website:
         file: index.qmd
       - text: "个人简介"
         file: about.qmd
-      - text: "参考资料"
-        file: reference.qmd
     # right:
     #   - icon: github
     #     menu:
@@ -34,17 +32,19 @@ website:
     #   - icon: google
     #     href: http://google.com/
 
-  # sidebar:
-  #   - title: "博客"
-  #     style: docked
-  #     type: dark
-  #     background: light
-  #     contents:
-  #       - index.qmd
-  #   - title: "资料"
-  #     contents:
-  #       - references.qmd
-  #       # navigation items
+  sidebar:
+    - title: "学习系列"
+      style: docked
+      type: dark
+      background: light
+      contents: auto
+    #     - text: "Causal Inference"
+    #       href: posts/Causal-Inference/index.qmd  # Ensure you have an index.qmd for listing series posts
+    #     - text: "AI News"
+    #       href: posts/AI-news/index.qmd
+    # - title: "其他链接"
+    #   contents:
+    #     - references.qmd
 
 format:
   html:

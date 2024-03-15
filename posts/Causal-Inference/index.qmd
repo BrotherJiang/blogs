@@ -1,0 +1,16 @@
+---
+title: "因果推断"
+description: "本系列是个人的学习记录，也希望帮助后来人快速入门AB实验/因果推断相关的基础知识。"
+---
+
+本系列将主要参考以下资料，欢迎有兴趣的小伙伴多多交流，一起提高。
+
+## 图书
+
+- Kohavi, R., Tang, D., & Xu, Y. (2020). *Trustworthy online controlled experiments: A practical guide to a/b testing*. Cambridge University Press. （本书中文版《关键迭代：可信赖的线上对照实验》）
+
+- Molak, A. (2023). *Causal Inference and Discovery in Python: Unlock the secrets of modern causal machine learning with DoWhy, EconML, PyTorch and more*. Packt Publishing Ltd.
+
+## 视频教程
+
+- Introduction to Causal Inference: from a Machine Learning Perspective（因果推断入门，Youtube/Bilibili都有视频）。课程网址：https://www.bradyneal.com/causal-inference-course，还能搜到配套的pdf讲义
