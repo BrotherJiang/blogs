@@ -139,3 +139,7 @@ $$
 n_1 = \frac{\hat{p} \hat{q} (1 + k)}{k \left( \frac{\Delta}{Z_{1-\alpha/2} + Z_{\beta}} \right)^2} =\frac{(Z_{1-\alpha/2} + Z_{\beta})^2\hat{p} (1-\hat{p}) (1 + \frac{1}{k})}{\Delta^2}
 $$
 
+### 留言区
+欢迎在下方留言讨论。如果您没有看到评论框，请确保您已登录 GitHub 账号。
+
+{{< include ../../_includes/utterances.html >}}

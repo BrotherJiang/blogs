@@ -118,3 +118,8 @@ MPR阶段专注于测量实验影响，通常保持一周时间，以捕捉时�
 ### 参考文献
 
 - Kohavi, Ron, Diane Tang, and Ya Xu. *Trustworthy Online Controlled Experiments: A Practical Guide to A/B Testing (关键迭代：可信赖的线上对照试验)*. Cambridge University Press, 2020.
+
+### 留言区
+欢迎在下方留言讨论。如果您没有看到评论框，请确保您已登录 GitHub 账号。
+
+{{< include ../../_includes/utterances.html >}}
