@@ -1,15 +1,15 @@
 ---
-title: "About"
+title: "个人简介"
 image: profile.jpg
 about:
   template: jolla
-  links:
-    - icon: linkedin
-      text: LinkedIn
-      href: https://linkedin.com/in/huiyu-jiang/
-    - icon: github
-      text: Github
-      href: https://github.com/BrotherJiang
+  # links:
+  #   - icon: linkedin
+  #     text: LinkedIn
+  #     href: https://linkedin.com/in/huiyu-jiang/
+  #   - icon: github
+  #     text: Github
+  #     href: https://github.com/BrotherJiang
 
 ---
 

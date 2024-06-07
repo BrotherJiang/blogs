@@ -2,10 +2,10 @@ project:
   type: website
 
 website:
-  title: "Huiyu的DS学习博客"
+  title: "DS学习博客"
   bread-crumbs: true
   back-to-top-navigation: true
-  page-footer: "© Huiyu Jiang 2024"
+  page-footer: "© Huiyu 2024"
   reader-mode: true
   repo-url: https://github.com/BrotherJiang/blogs
   repo-actions: [edit, issue]
@@ -16,38 +16,29 @@ website:
     pinned: true
     search: true
     left:
-      - text: "博客"
-        file: index.qmd
+      - text: "首页"
+        href: index.qmd
       - text: "个人简介"
-        file: about.qmd
-    # right:
-    #   - icon: github
-    #     menu:
-    #     - text: Source Code
-    #       url: https://code.com
-    #     - text: Report a Bug
-    #       url: https://bugs.com
-    #   - icon: twitter
-    #     href: https://twitter.com
-    #   - icon: google
-    #     href: http://google.com/
+        href: about.qmd
+      - sidebar:causal
+      # - sidebar:ai
 
   sidebar:
-    - title: "学习系列"
-      style: docked
-      type: dark
+    - id: causal
+      title: "因果推断"
+      style: "docked"
       background: light
-      contents: auto
-    #     - text: "Causal Inference"
-    #       href: posts/Causal-Inference/index.qmd  # Ensure you have an index.qmd for listing series posts
-    #     - text: "AI News"
-    #       href: posts/AI-news/index.qmd
-    # - title: "其他链接"
-    #   contents:
-    #     - references.qmd
-
+      collapse-level: 2
+      contents: "posts/Causal-Inference/*.qmd"
+    
+    # - id: ai
+    #   title: "AI新闻"
+    #   contents: "posts/AI-news/*.qmd"
+      
 format:
   html:
+    lang: zh-CN  # 设置网页语言为中文
+    date-locale: zh_CN
     theme:
       light: cosmo
       dark: darkly

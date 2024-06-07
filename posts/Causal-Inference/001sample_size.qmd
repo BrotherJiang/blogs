@@ -1,0 +1,141 @@
+---
+title: "AB实验样本量计算公式"
+date: "2024-05-22"
+date-modified: "2024-05-24"
+series: "Causal-Inference"
+---
+
+# 假设检验和样本量计算推导 
+
+## 1. 数值型指标假设检验
+
+假设我们有两个实验组 A 和 B，样本量分别为 $n_1，n_2$，样本均值分别为 $\bar{x}_1$ 和 $\bar{x}_2$，样本方差分别为 $\sigma_1^2$ 和 $\sigma_2^2$。我们希望检验这两个样本的均值是否存在显著差异。即：
+
+- **零假设 $H_0$**: $\mu_1 = \mu_2,$
+- **备择假设 $H_1$**: $\mu_1 \neq \mu_2.$
+
+### 检验统计量
+
+在该实验中混合标准误差 $SE$ 为：
+
+$$
+SE = \sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}}.
+$$
+
+当 $H_0$ 为真时，
+
+$$
+Z = \frac{\bar{x}_2 - \bar{x}_1}{SE} \sim N(0, 1).
+$$
+
+当 $H_1$ 为真时，
+
+$$
+Z = \frac{\bar{x}_2 - \bar{x}_1 - \Delta}{SE} \sim N(0, 1).
+$$
+
+其中，$\Delta = \mu_2 - \mu_1$ 代表最小检测效应（Minimum Detectable Effect, MDE），即检验灵敏度。
+
+### 接受域（Acceptance Region）
+
+对于双边检验，我们能得到接受域（即当检验统计量落在此区域内时，我们不拒绝零假设 $H_0$）：
+
+$$
+-Z_{1-\alpha/2} \leq \frac{\bar{x}_2 - \bar{x}_1}{SE} \leq Z_{1-\alpha/2}.
+$$
+
+其中 $\alpha$ 表示显著性水平（通常为 0.05）。 $\Phi(Z_a) = \int_{-\infty}^{Z_a} \varphi(x) dx = a$，$\varphi$ 表示标准正态分布的概率密度函数。
+
+### $\beta$ 的定义及推导
+
+第二类错误概率（$\beta$）定义为在 $H_1$ 为真时，错误地不拒绝 $H_0$ 的概率，即：
+
+\begin{align*}
+\beta &= P(\text{retain } H_0 \mid H_0 \text{ is false})\\
+&= P\left( -Z_{1-\alpha/2} \leq \frac{\bar{x}_2 - \bar{x}_1}{SE} \leq Z_{1-\alpha/2} \mid H_1 \right)\\
+&= P\left( -Z_{1-\alpha/2} - \frac{\Delta}{SE}  \leq \frac{\bar{x}_2 - \bar{x}_1 - \Delta}{SE} \leq Z_{1-\alpha/2} - \frac{\Delta}{SE} \right)\\
+&= \Phi\left( Z_{1-\alpha/2} - \frac{\Delta}{SE} \right) - \Phi\left( -Z_{1-\alpha/2} - \frac{\Delta}{SE} \right)\\
+&= \Phi\left( Z_{1-\alpha/2} - \frac{\Delta}{SE} \right) + \Phi\left( Z_{1-\alpha/2} + \frac{\Delta}{SE} \right) - 1.
+\end{align*}
+
+此时如果我们能够通过实验设计满足
+
+$$
+\Phi\left( Z_{1-\alpha/2} - \frac{\Delta}{SE} \right) = \beta.
+$$
+
+则我们能够确保犯第二类错误的概率不超过预定的$\beta$（因为剩余部分$\Phi\left( Z_{1-\alpha/2} + \frac{\Delta}{SE} \right) - 1$必然为负），从而确保了在备择假设下有足够的检验功效（即 Power = $1 - \beta$ 足够大）。
+
+重新排列后能够得到：
+
+$$
+\Delta = (Z_{1-\alpha/2} + Z_{\beta}) \cdot SE.
+$$
+
+### 样本量计算公式
+
+基于以上推导，假设$n_2 = kn_1$，则在给定显著性水平 $\alpha$、检验功效 $1 - \beta$ 和效应大小 $\Delta$ 的情况下，样本量 $n_1$ 需要满足：
+
+$$
+n_1 = \frac{(Z_{1-\alpha/2} + Z_{\beta})^2 \cdot (\sigma_1^2 + \sigma_2^2/k)}{\Delta^2} .
+$$
+
+这确保了在指定的置信水平和检验功效下，样本量足以检测到预期的效应大小 $\Delta$。
+
+
+## 2. 比率型指标假设检验
+
+假设我们有两个实验组，其样本量分别为 $n_1$ 和 $n_2 = kn_1$，成功数分别为$x_1,x_2$, 成功率分别为 $\hat{p}_1 = \frac{x_1}{n_1}$ 和 $\hat{p}_2=\frac{x_2}{n_2}$，。我们希望检验这两个样本的成功率是否存在显著差异。即：
+
+- **零假设 $H_0$**: $p_1 = p_2,$
+- **备择假设 $H_1$**: $p_1 \neq p_2.$
+
+### 检验统计量
+
+在该实验中混合标准误差 $SE$ 为：
+
+$$
+SE = \sqrt{\frac{\hat{p}_1 (1 - \hat{p}_1)}{n_1} + \frac{\hat{p}_2 (1 - \hat{p}_2)}{n_2}}.
+$$
+
+当 $H_0$ 为真时，
+
+$$
+Z = \frac{\hat{p}_2 -\hat{p}_1 }{SE} \sim N(0, 1).
+$$
+
+当 $H_1$ 为真时，
+
+$$
+Z = \frac{\hat{p}_2 -\hat{p}_1 - \Delta}{SE} \sim N(0, 1).
+$$
+
+其中，$\Delta = p_2 - p_1$ 代表最小检测效应。
+
+### 综合成功率
+为了简化计算，假设两个实验组成功率相等，引入综合成功率 $\hat{p}$ 来表示总体的成功率：
+
+$$
+\hat{p} = \frac{\hat{p}_1 + k \hat{p}_2}{1 + k}, \quad \hat{q} = 1- \hat{p}.
+$$
+
+在 $H_0$ 为真时，混合标准误差可以重新表示为：
+
+$$
+SE = \sqrt{\hat{p} \hat{q} \left( \frac{1}{n_1} + \frac{1}{n_2} \right)}  = \sqrt{\hat{p} \hat{q} \frac{1 + k}{k n_1}}.
+$$
+
+### 样本量计算公式
+
+类似数值型假设检验，当效应大小 $\Delta = |p_2 - p_1|$时，为了使备择假设下检验统计量达到一定的功效 $1 - \beta$，依然要满足等式：
+$$
+\Delta = (Z_{1-\alpha/2} + Z_{\beta}) \cdot SE.
+$$
+
+
+求解可得样本量 $n_1$ 必须满足以下条件：
+
+$$
+n_1 = \frac{\hat{p} \hat{q} (1 + k)}{k \left( \frac{\Delta}{Z_{1-\alpha/2} + Z_{\beta}} \right)^2} =\frac{(Z_{1-\alpha/2} + Z_{\beta})^2\hat{p} (1-\hat{p}) (1 + \frac{1}{k})}{\Delta^2}
+$$
+
