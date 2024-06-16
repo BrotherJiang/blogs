@@ -38,13 +38,13 @@ series: "Causal-Inference"
 - **样本量大小**：假设我们有两个实验组，其样本量分别为 $n_1$ 和 $n_2 = kn_1$。在给定显著性水平 $\alpha$、检验功效 $1 - \beta$ 和效应大小 $\Delta$ 的情况下，对于数值型指标（$\Delta = \mu_2 - \mu_1$），样本量 $n_1$ 需要满足：
 
   $$
-  n_1 = \frac{(Z_{1-\alpha/2} + Z_{\beta})^2 \cdot (\sigma_1^2 + \sigma_2^2/k)}{\Delta^2} 
+  n_1 = \frac{(Z_{1-\alpha/2} + Z_{1-\beta})^2 \cdot (\sigma_1^2 + \sigma_2^2/k)}{\Delta^2} 
   $$
 
   对于比率型指标（$\Delta = p_2 - p_1$），样本量 $n_1$ 需要满足：
 
   $$
-  n_1 = \frac{(Z_{1-\alpha/2} + Z_{\beta})^2 \hat{p} (1 - \hat{p}) (1 + \frac{1}{k})}{\Delta^2},\quad \hat{p} = \frac{\hat{p}_1 + k \hat{p}_2}{1 + k}
+  n_1 = \frac{(Z_{1-\alpha/2} + Z_{1-\beta})^2 \hat{p} (1 - \hat{p}) (1 + \frac{1}{k})}{\Delta^2},\quad \hat{p} = \frac{\hat{p}_1 + k \hat{p}_2}{1 + k}
   $$
 
   关于样本量的计算公式推导过程请参考[AB实验样本量计算公式](001sample_size.qmd)。
@@ -113,6 +113,6 @@ series: "Causal-Inference"
 - Kohavi, Ron, Diane Tang, and Ya Xu. *Trustworthy Online Controlled Experiments: A Practical Guide to A/B Testing (关键迭代：可信赖的线上对照试验)*. Cambridge University Press, 2020.
 
 ### 留言区
-欢迎在下方留言讨论。如果您没有看到评论框，请确保您已登录 GitHub 账号。
+欢迎在下方留言讨论。如果您无法输入评论，请确保您已登录 GitHub 账号。
 
 {{< include ../../_includes/utterances.html >}}

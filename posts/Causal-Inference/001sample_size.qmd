@@ -69,15 +69,17 @@ $$
 重新排列后能够得到：
 
 $$
-\Delta = (Z_{1-\alpha/2} + Z_{\beta}) \cdot SE.
+\Delta = (Z_{1-\alpha/2} - Z_{\beta}) \cdot SE = (Z_{1-\alpha/2} + Z_{1-\beta}) \cdot SE .
 $$
+
+若令$\alpha = 5\%,\ \beta = 20\%, k=1$，又假设$\sigma_1=\sigma_2=\sigma$，此时实验样本量约为$n=\frac{16\sigma^2}{\Delta^2}$。这就是大家常看到的简单估计版本。
 
 ### 样本量计算公式
 
 基于以上推导，假设$n_2 = kn_1$，则在给定显著性水平 $\alpha$、检验功效 $1 - \beta$ 和效应大小 $\Delta$ 的情况下，样本量 $n_1$ 需要满足：
 
 $$
-n_1 = \frac{(Z_{1-\alpha/2} + Z_{\beta})^2 \cdot (\sigma_1^2 + \sigma_2^2/k)}{\Delta^2} .
+n_1 = \frac{(Z_{1-\alpha/2} + Z_{1-\beta})^2 \cdot (\sigma_1^2 + \sigma_2^2/k)}{\Delta^2} .
 $$
 
 这确保了在指定的置信水平和检验功效下，样本量足以检测到预期的效应大小 $\Delta$。
@@ -140,6 +142,6 @@ n_1 = \frac{\hat{p} \hat{q} (1 + k)}{k \left( \frac{\Delta}{Z_{1-\alpha/2} + Z_{
 $$
 
 ### 留言区
-欢迎在下方留言讨论。如果您没有看到评论框，请确保您已登录 GitHub 账号。
+欢迎在下方留言讨论。如果您无法输入评论，请确保您已登录 GitHub 账号。
 
 {{< include ../../_includes/utterances.html >}}
